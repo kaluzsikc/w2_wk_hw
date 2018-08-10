@@ -10,8 +10,12 @@ class Room
     @songs = songs
   end
 
-  def add_guest_to_room(num)
-    @guests += num
+  def add_guest_to_room(guest_num)
+    @guests += guest_num
+  end
+
+  def remove_guest_from_room(guest_num)
+    @guests -= guest_num
   end
 
   def too_many_guests?(guest)

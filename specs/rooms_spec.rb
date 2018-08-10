@@ -32,9 +32,9 @@ class RoomTest < MiniTest::Test
     assert_equal(5, @room.fee)
   end
 
-  # def test_room_has_guests
-  #   assert_equal(10, @room.guests)
-  # end
+  def test_room_has_guests
+    assert_equal(9, @room.guests)
+  end
 
   def test_room_has_songs
     assert_equal(6, @room.songs.count)
@@ -43,6 +43,11 @@ class RoomTest < MiniTest::Test
   def test_add_guest_to_room
     @room.add_guest_to_room(1)
     assert_equal(10, @room.guests)
+  end
+
+  def test_remove_guest_from_room
+    @room.remove_guest_from_room(1)
+    assert_equal(8, @room.guests)
   end
 
   def test_room_full_false
