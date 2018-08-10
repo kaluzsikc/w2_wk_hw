@@ -41,12 +41,12 @@ class RoomTest < MiniTest::Test
   end
 
   def test_add_guest_to_room
-    @room.add_guest_to_room(1)
+    @room.check_in_guest_to_room(1)
     assert_equal(10, @room.guests)
   end
 
   def test_remove_guest_from_room
-    @room.remove_guest_from_room(1)
+    @room.check_out_guest_from_room(1)
     assert_equal(8, @room.guests)
   end
 
@@ -55,9 +55,10 @@ class RoomTest < MiniTest::Test
   end
 
   def test_room_full_true
-      @room.add_guest_to_room(1)
-      @room.add_guest_to_room(1)
-      @room.add_guest_to_room(1)
+      @room.check_in_guest_to_room(1)
+      @room.check_in_guest_to_room(1)
+      @room.check_in_guest_to_room(1)
+      @room.check_in_guest_to_room(1)
       assert_equal(true, @room.too_many_guests?(@guest1))
   end
 
