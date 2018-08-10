@@ -14,6 +14,9 @@ class Room
     @guests += num
   end
 
+  def too_many_guests?(guest)
+    return guests >= spaces
+  end
 
 
 end
