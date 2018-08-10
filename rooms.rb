@@ -7,7 +7,13 @@ class Room
     @spaces = spaces
     @fee = fee
     @guests = guests
-    @songs = []
+    @songs = songs
   end
+
+  def add_guest_to_room(num)
+    @guests += num
+  end
+
+
 
 end
