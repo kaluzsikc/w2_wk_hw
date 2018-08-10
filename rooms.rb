@@ -16,11 +16,16 @@ class Room
 
   def check_out_guest_from_room(guest_num)
     @guests -= guest_num
+
+    # reset the counter
+
   end
 
   def too_many_guests?(guest)
     return guests >= spaces
   end
 
-
+  def add_new_song(new_song)
+    songs << new_song
+  end
 end

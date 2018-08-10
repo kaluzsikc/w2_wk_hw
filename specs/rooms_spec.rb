@@ -16,6 +16,8 @@ class RoomTest < MiniTest::Test
     @song5 = Song.new("song5")
     @song6 = Song.new("song6")
 
+    @song7 = Song.new("song7")
+
     songs = [@song1, @song2, @song3, @song4, @song5, @song6]
     @room = Room.new("room1", 10, 5, 9, songs)
   end
@@ -60,6 +62,11 @@ class RoomTest < MiniTest::Test
       @room.check_in_guest_to_room(1)
       @room.check_in_guest_to_room(1)
       assert_equal(true, @room.too_many_guests?(@guest1))
+  end
+
+  def test_add_new_song
+    @room.add_new_song(@song7)
+    assert_equal(7, @room.songs.count)
   end
 
 end
