@@ -18,6 +18,7 @@ class Room
     @guests -= guest_num
 
     # reset the counter
+    @spaces -= guest_num
 
   end
 

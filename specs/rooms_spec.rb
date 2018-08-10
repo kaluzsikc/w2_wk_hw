@@ -42,14 +42,19 @@ class RoomTest < MiniTest::Test
     assert_equal(6, @room.songs.count)
   end
 
+  def test_add_new_song
+    @room.add_new_song(@song7)
+    assert_equal(7, @room.songs.count)
+  end
+
   def test_add_guest_to_room
     @room.check_in_guest_to_room(1)
     assert_equal(10, @room.guests)
   end
 
   def test_remove_guest_from_room
-    @room.check_out_guest_from_room(1)
-    assert_equal(8, @room.guests)
+    @room.check_out_guest_from_room(9)
+    assert_equal(0, @room.guests)
   end
 
   def test_room_full_false
@@ -57,16 +62,8 @@ class RoomTest < MiniTest::Test
   end
 
   def test_room_full_true
-      @room.check_in_guest_to_room(1)
-      @room.check_in_guest_to_room(1)
-      @room.check_in_guest_to_room(1)
-      @room.check_in_guest_to_room(1)
+      @room.check_in_guest_to_room(4)
       assert_equal(true, @room.too_many_guests?(@guest1))
-  end
-
-  def test_add_new_song
-    @room.add_new_song(@song7)
-    assert_equal(7, @room.songs.count)
   end
 
 end
