@@ -6,7 +6,7 @@ class Guest
     @name = name
     @money = money
   end
-  
+
 # buying ticket for the room
   def buy_ticket(room)
     @money -= room.fee
@@ -15,4 +15,7 @@ class Guest
   #   @money -= fee
   # end
 
+  def sufficient_money?(room)
+    return room.fee <= money
+  end
 end
