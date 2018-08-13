@@ -10,6 +10,11 @@ class Room
     @songs = songs
   end
 
+  # def sell_ticket
+  #   return if too_many_guests?(guest)
+  #
+  # end
+
   def check_in_guest_to_room(guest_num)
     @guests += guest_num
   end
@@ -17,7 +22,7 @@ class Room
   def check_out_guest_from_room(guest_num)
     @guests -= guest_num
 
-    # reset the counter
+    # increase number of spaces when guests leave
     @spaces -= guest_num
 
   end

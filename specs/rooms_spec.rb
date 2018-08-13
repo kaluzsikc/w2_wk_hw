@@ -66,4 +66,7 @@ class RoomTest < MiniTest::Test
       assert_equal(true, @room.too_many_guests?(@guest1))
   end
 
+  # def test_sell_ticket
+  #
+  # end
 end
